@@ -4,29 +4,35 @@ public class Question5
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
     Scanner in = new Scanner(System.in);
+
+    System.out.print("Please enter a number: ");
+    int userInt = in.nextInt();
+    
+    
+    ArrayList<Integer> allUserInput = new ArrayList<>();
+
+    
+    for (int i=0; i<userInt; i++){
+      System.out.print("Please enter another number: ");
+      allUserInput.add(in.nextInt());
+    }
+    
+    int t = 0;
+    for(int i=0; i<allUserInput.size(); i++){
+      for(int j=1; j<allUserInput.size()-i; j++){
+            
+        if(allUserInput.get(j-1) > allUserInput.get(j)){
+          t = allUserInput.get(j-1);
+          allUserInput.set(j-1,allUserInput.get(j));
+          allUserInput.set(j,t);
+        }
+        
+      }
+    }
+    
+    int mode = allUserInput.get(0);
+    System.out.println("The mode is: " + mode);
     
   }
 }
