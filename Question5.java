@@ -1,39 +1,45 @@
-import java.util.Scanner;
+import java.util.Scanner;import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Question5
+public class Main
 {
   public static void main(String[] args)
   {
-    Scanner in = new Scanner(System.in);
+    ArrayList<Integer> userNum = new ArrayList<>();
 
-    //System.out.print("Please enter a number: ");
-    int userInt = in.nextInt();
+    Scanner sc = new Scanner(System.in);
     
-    
-    ArrayList<Integer> allUserInput = new ArrayList<>();
+    //System.out.print("Enter integer: ");
+    int counter = sc.nextInt();
 
-    
-    for (int i=0; i<userInt; i++){
-      //System.out.print("Please enter another number: ");
-      allUserInput.add(in.nextInt());
+    for(int i = 0; i < counter; i++){
+      //System.out.print("Enter another integer: ");
+      userNum.add(sc.nextInt());
     }
+
     
-    int t = 0;
-    for(int i=0; i<allUserInput.size(); i++){
-      for(int j=1; j<allUserInput.size()-i; j++){
-            
-        if(allUserInput.get(j-1) > allUserInput.get(j)){
-          t = allUserInput.get(j-1);
-          allUserInput.set(j-1,allUserInput.get(j));
-          allUserInput.set(j,t);
-        }
-        
+
+    int count1 = 0;
+    int count2 = 0;
+    int mode1 = 0;
+    int mode2 = 0;
+
+    for (int m = 0; m < userNum.size(); m++){
+      
+      mode1 = userNum.get(m);
+      count1 = 0;
+      
+      for(int j = m + 1; j < userNum.size();j++){
+        if (mode1 == userNum.get(j)) count1++;
       }
+      if (count1 > count2){
+        mode2 = mode1;
+        count2 = count1;
+      }  
+      
     }
-    
-    int mode = allUserInput.get(0);
-    System.out.println(mode);
+
+    System.out.print(mode2);
     
   }
 }
