@@ -6,11 +6,11 @@ public class Question3
   {
     Scanner sc = new Scanner(System.in);
 
-    System.out.print("Please enter a integer: ");
+    //System.out.print("Please enter a integer: ");
     int userInt = sc.nextInt();
 
     int newInt = userInt * userInt;
 
-    System.out.println("The final result: " + newInt);
+    System.out.println(newInt);
   }
 }
