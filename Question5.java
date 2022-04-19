@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Question5
 {
@@ -6,7 +7,7 @@ public class Question5
   {
     Scanner in = new Scanner(System.in);
 
-    System.out.print("Please enter a number: ");
+    //System.out.print("Please enter a number: ");
     int userInt = in.nextInt();
     
     
@@ -14,7 +15,7 @@ public class Question5
 
     
     for (int i=0; i<userInt; i++){
-      System.out.print("Please enter another number: ");
+      //System.out.print("Please enter another number: ");
       allUserInput.add(in.nextInt());
     }
     
@@ -32,7 +33,7 @@ public class Question5
     }
     
     int mode = allUserInput.get(0);
-    System.out.println("The mode is: " + mode);
+    System.out.println(mode);
     
   }
 }
